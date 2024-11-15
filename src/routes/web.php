@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,7 @@ use App\Http\Controllers\TodoController;
 */
 
 Route::get('/', [TodoController::class, 'index']);
+Route::post('/todos', [TodoController::class, 'store']);
+Route::patch('/todos/update/{id}', [TodoController::class, 'update'])->name('todos.update');
+Route::delete('/todos/delete/{id}', [TodoController::class, 'destroy'])->name('todos.delete');
+Route::get('/categories', [CategoryController::class, 'index']);
