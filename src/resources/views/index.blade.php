@@ -11,24 +11,25 @@
     </div>
 </div>
 <div class="todo-content">
-    <div class="todo-create">
+    <form class="todo-create" action="/todos" method="post">
+        @csrf
         <div class="todo-create__text">
-            <input class="todo-create__input" type="text" name="content" value="">
+            <input class="todo-create__input" type="text" name="content" value="{{old('content')}}">
         </div>
         <div class="todo-create__button">
             <button class="todo-create__button-submit" type="submit">作成</button>
         </div>
-    </div>
+    </form>
     <table class="todo-table">
         <tr class="todo-table__row">
             <th class="todo-table__header">Todo</th>
         </tr>
-
+        @foreach($todos as $todo)
         <tr class="todo-table__row">
             <td class="todo-table__update">
                 <form class="update-form" action="" method="post">
                     <div class="update-form__content">
-                        <input class="update-form__input" type="text" name="content" value="test">
+                        <input class="update-form__input" type="text" name="content" value="{{$todo['content']}}">
                     </div>
                     <div class="update-form__button">
                         <button class="update-form__button-submit" type="submit">更新</button>
@@ -43,6 +44,7 @@
                 </form>
             </td>
         </tr>
+        @endforeach
     </table>
 
 </div>
