@@ -6,9 +6,20 @@
 
 @section('content')
 <div class="alert">
+    @if(session('message'))
     <div class="alert__success">
-        Todoを作成しました
+        {{session('message')}}
     </div>
+    @endif
+    @if($errors->any())
+    <div class="alert__danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 </div>
 <div class="todo-content">
     <form class="todo-create" action="/todos" method="post">
