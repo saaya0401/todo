@@ -70,8 +70,12 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    text-align: left;
     font-size: 20px;
-    width: 90%;
+    width: 100%;
+}
+.todo-table__title{
+    width: 45%;
 }
 .todo-table__hidden{
     width: 10%;
@@ -86,7 +90,7 @@
     justify-content: space-between;
 }
 .update-form__content{
-    width: 40%;
+    width: 45%;
 }
 .update-form__input{
     width: 100%;
@@ -96,13 +100,15 @@
     padding: 7px;
 }
 .update-form__category{
-    width: 40%;
+    width: 45%;
 }
 .update-form__category-select{
-    width: 50%;
+    width: 100%;
     appearance: none;
     outline: none;
     border: none;
+    padding: 7px;
+    font-size: 16px;
 }
 .update-form__button{
     width: 10%;

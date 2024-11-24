@@ -29,8 +29,11 @@
         @csrf
         <div class="todo-create__text">
             <input class="todo-create__input" type="text" name="content" value="{{old('content')}}">
-            <select class="todo-create__select" name="name">
-                <option value="">カテゴリ</option>
+            <select class="todo-create__select" name="category_id">
+                <option value="">カテゴリ未選択</option>
+                @foreach($categories as $category)
+                <option value="{{$category['id']}}">{{$category['name']}}</option>
+                @endforeach
             </select>
         </div>
         <div class="todo-create__button">
@@ -40,12 +43,15 @@
     <div class="todo-title">
         <h2>Todo検索</h2>
     </div>
-    <form class="todo-create" action="/todos" method="post">
+    <form class="todo-create" action="/todos/search" method="get">
         @csrf
         <div class="todo-create__text">
-            <input class="todo-create__input" type="text" name="content" value="{{old('content')}}">
-            <select class="todo-create__select" name="name">
+            <input class="todo-create__input" type="text" name="keyword" value="{{old('keyword')}}">
+            <select class="todo-create__select" name="category_id">
                 <option value="">カテゴリ</option>
+                @foreach($categories as $category)
+                <option value="{{$category['id']}}">{{$category['name']}}</option>
+                @endforeach
             </select>
         </div>
         <div class="todo-create__button">
@@ -71,8 +77,11 @@
                         <input type="hidden" name="id" value="{{$todo['id']}}">
                     </div>
                     <div class="update-form__category">
-                        <select class="update-form__category-select" name="name" >
-                            <option value="">カテゴリ</option>
+                        <select class="update-form__category-select" name="category_id" >
+                            <option value="" disabled selected>{{$todo['category']['name']}}</option>
+                            @foreach($categories as $category)
+                            <option value="{{$category['id']}}">{{$category['name']}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="update-form__button">
