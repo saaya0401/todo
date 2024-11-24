@@ -8,7 +8,7 @@
 <div class="alert">
     @if(session('message'))
     <div class="alert__success">
-        カテゴリを作成しました
+        {{session('message')}}
     </div>
     @endif
     @if($errors->any())
@@ -39,11 +39,12 @@
         @foreach($categories as $category)
         <tr class="category-table__row">
             <td class="category-table__update">
-                <form class="update-form" action="" method="post">
+                <form class="update-form" action="/categories/update" method="post">
                     @csrf
+                    @method('PATCH')
                     <div class="update-form__content">
                         <input class="update-form__input" type="text" name="name" value="{{$category['name']}}">
-                        <input type="hidden" name="id"value="{{$category['id']}}">
+                        <input type="hidden" name="id" value="{{$category['id']}}">
                     </div>
                     <div class="update-form__button">
                         <button class="update-form__button-submit" type="submit">更新</button>
@@ -51,7 +52,8 @@
                 </form>
             </td>
             <td class="category-table__delete">
-                <form class="delete-form" action="" method="post">
+                <form class="delete-form" action="/categories/delete" method="post">
+                    @method('delete')
                     @csrf
                     <div class="delete-form__button">
                         <input type="hidden" name="id" value="{{$category['id']}}">
