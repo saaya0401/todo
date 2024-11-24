@@ -1,57 +1,50 @@
-.alert__success{
+.alert__success {
     color: #0f5132;
-    background-color:#d1e7dd ;
+    background-color: #d1e7dd;
     border: 1px solid #badbcc;
     padding: 10px;
 }
-.alert__danger{
+
+.alert__danger {
     color: #842029;
     background-color: #f8d7da;
     border: 1px solid #f5c2c7;
     padding: 10px;
 }
-.alert__danger ul{
+
+.alert__danger ul {
     margin: 0;
     padding-left: 5px;
 }
 
-.todo-content{
+.category-content {
     max-width: 1230px;
     margin: 50px auto;
 }
-.todo-title{
-    width: 70%;
-    margin: 0 auto;
-    /* outline: 1px solid red; */
-}
-.todo-create{
+.category-create {
     width: 70%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
 }
-.todo-create__text{
+
+.category-create__text {
     width: 70%;
     display: flex;
     justify-content: space-between;
 }
-.todo-create__input{
-    width: 70%;
+
+.category-create__input {
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 3px;
     height: 40px;
 }
-.todo-create__select{
-    appearance: none;
-    width: 25%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-.todo-create__button{
+.category-create__button {
     width: 20%;
 }
-.todo-create__button-submit{
+
+.category-create__button-submit {
     width: 100%;
     border-radius: 3px;
     background-color: #000;
@@ -59,55 +52,50 @@
     height: 40px;
     cursor: pointer;
 }
-.todo-table{
+
+.category-table {
     width: 70%;
     margin: 50px auto;
 }
-.todo-table__row{
+
+.category-table__row {
     border-bottom: 1px solid #ddd;
 }
-.todo-table__header{
+
+.category-table__header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     width: 90%;
 }
-.todo-table__hidden{
-    width: 10%;
-}
-.todo-table__update{
+.category-table__update {
     padding: 10px;
     width: 90%;
 }
-.update-form{
+
+.update-form {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.update-form__content{
-    width: 40%;
+
+.update-form__content {
+    width: 80%;
 }
-.update-form__input{
+
+.update-form__input {
     width: 100%;
     border: none;
     outline: none;
     font-size: 16px;
     padding: 7px;
 }
-.update-form__category{
-    width: 40%;
-}
-.update-form__category-select{
-    width: 50%;
-    appearance: none;
-    outline: none;
-    border: none;
-}
-.update-form__button{
+.update-form__button {
     width: 10%;
 }
-.update-form__button-submit{
+
+.update-form__button-submit {
     border-radius: 3px;
     background-color: blue;
     color: #fff;
@@ -116,14 +104,16 @@
     cursor: pointer;
     margin-left: 15px;
 }
-.todo-table__delete{
+
+.category-table__delete {
     width: 10%;
 }
 
-.delete-form__button{
+.delete-form__button {
     width: 100%;
 }
-.delete-form__button-submit{
+
+.delete-form__button-submit {
     background-color: red;
     color: #fff;
     padding: 7px 12px;
